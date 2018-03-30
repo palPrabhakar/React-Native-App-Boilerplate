@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppRegistry, View, Text, Button } from 'react-native';
+import { AppRegistry, View, ScrollView, Text, Button, Alert } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import  HomeScreen  from './HomeScreen'
 import AartiScreen from './AartiScreen'
@@ -7,16 +7,18 @@ import AartiScreen from './AartiScreen'
 class AartiDetailsScreen extends React.Component {
   render() {
     const { params } = this.props.navigation.state;
-    const text = params ? params.text.english : "maa chuda"
-
+    const aartiText = params ? params.text.english : "maa chuda"
+    // var text = JSON.stringify(text)
     return (
-      <View style={{ flex: 1, alignItems: 'flex-start', justifyContent: 'center' }}>
-        <Text style={{fontSize:18}}>{JSON.stringify(text)}</Text>
+      <ScrollView style={{ flex: 1}}>
+        {aartiText.split("\n").map(x => {
+          return <Text style={{fontSize:18, paddingLeft : 12, paddingTop : 15}}>{x}</Text>
+        })}
         {/* <Button
           title="Go back"
           onPress={() => this.props.navigation.goBack()}
         /> */}
-      </View>
+      </ScrollView>
     );
   }
 }
