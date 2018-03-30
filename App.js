@@ -7,7 +7,7 @@ import AartiScreen from './AartiScreen'
 class AartiDetailsScreen extends React.Component {
   render() {
     const { params } = this.props.navigation.state;
-    const aartiText = params ? params.text.english : "maa chuda"
+    const aartiText = params ? params.text.hindi : "maa chuda"
     // var text = JSON.stringify(text)
     return (
       <ScrollView style={{ flex: 1}}>

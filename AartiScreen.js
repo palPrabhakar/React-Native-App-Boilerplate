@@ -16,7 +16,7 @@ export default class AartiScreen extends React.Component {
     return (
       <TouchableHighlight style={styles.container} onPress={this.onPress.bind(this, item)} underlayColor="white">
         <View style={styles.row}>
-          <Text style={styles.row}>{item.name.english}</Text>
+          <Text style={styles.row}>{item.name.hindi}</Text>
         </View>
       </TouchableHighlight>
     )
